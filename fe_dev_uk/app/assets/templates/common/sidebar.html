@@ -1,0 +1,28 @@
+<div class="col-xs-1">
+    <nav class="main-menu" ng-class="{'sideBarExpanded':sideBarExpanded}" ng-controller="sidebarController">
+        <ul>
+            <li>
+                <a ng-click="sideBarExpanded = !sideBarExpanded"><span class="expandSideBarIcon"></a>
+            </li>
+            <li class="dashBoardMenu" ng-class="{'active':activePage=='analytics'}">
+                <a href="#/dashboard/analytics">
+                    <span class="dashboardIcon"></span>
+                    <span class="nav-text" ng-class="{'hidden':!sideBarExpanded}">Dashboard</span>
+                </a>
+            </li>
+            <li class="assetManagementMenu" ng-class="{'active':activePage=='assetManagement'}">
+                <a href="#/dashboard/assetsearch">
+                    <span class="assetManagementIcon"></span>
+                    <span class="nav-text" ng-class="{'hidden':!sideBarExpanded}">Asset Management</span>
+                </a>
+            </li>
+            <li class="uploadDataFileMenu" ng-class="{'active':activePage=='notification'}">
+                <a href="#/dashboard/notification">
+                    <span class="notificationIcon"></span>
+                    <span class="nav-text" ng-class="{'hidden':!sideBarExpanded}">Notifications</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</div>

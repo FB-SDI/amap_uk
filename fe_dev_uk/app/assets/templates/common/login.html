@@ -1,0 +1,55 @@
+<div data-ng-controller="loginController" class="loginPage">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 loginContainer">
+        <div class="col-xs-6 infoSection">
+            <div class="row centered">
+                <div class="col-xs-12 infoHeader">
+                    <div class="col-xs-2 headerLogo">
+                        <img class="deloitte_iot" src="../assets/images/deloitte_IOT.png">
+                        <img class="predix_iot" src="../assets/images/predix_IOT.png">
+                    </div>
+                    <div class="col-xs-10 headerDesc">
+                        <div class="col-xs-12 headerTitle">Deloitte Digital IoT</div>
+                        <div class="col-xs-12 headerInfo">Asset Management & Analytics Platform</div>
+                    </div>
+                </div>
+                <div class="col-xs-12 infoDesc">
+                    In this Oil & Gas industry demo run on GE Predix, installed sensors on production equipment relay information to the platform to receive real-time alerts and automated service tickets, analyze historical patterns to identify patterns, and utilize machine
+                    learning to drive predictive maintenance.
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 loginSection">
+            <div class="row centered">
+                <div class="col-xs-12 text-center centered">
+                    <form name='form' class="loginForm" novalidate>
+                        <label>User Name</label>
+                        <input type="text" placeholder='Username' name='username' ng-model="userDetails.username">
+                        <label>Password</label>
+                        <input type="password" placeholder='Password' name='password' ng-model="userDetails.password">
+                        <button class='submitButton' type="submit" ng-click="redirectToDashboard()">LOG IN</button>
+                    </form>
+                    <div class="errors text-center" ng-show='errorFlag'>
+                        <h5>{{errorMsg}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 row footerRow">
+        <div class="col-xs-12 col-sm-4 alignCenter">
+            <div class="col-xs-12 textBox">Andy Daecher</div>
+            <div class="col-xs-12 textBox">IoT Practice Leader</div>
+            <div class="col-xs-12 textBox">adaecher@deloitte.com</div>
+        </div>
+        <div class="col-xs-12 col-sm-4 alignCenter">
+            <div class="col-xs-12 textBox">Sid Verma</div>
+            <div class="col-xs-12 textBox">IIoT and Predix Capability Lead</div>
+            <div class="col-xs-12 textBox">siddverma@deloitte.com</div>
+        </div>
+        <div class="col-xs-12 col-sm-4 alignCenter">
+            <div class="col-xs-12 textBox">Matthias Pupillo</div>
+            <div class="col-xs-12 textBox">Sr. IoT Architect</div>
+            <div class="col-xs-12 textBox">mpupillo@deloitte.com</div>
+        </div>
+    </div>
+</div>

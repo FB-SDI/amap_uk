@@ -1,0 +1,14 @@
+{
+    "data": {
+        "status": "productMaintainence",
+        "locations": [{
+            "lat": -34.55825,
+            "lon": 149.11717,
+            "status": 3,
+            "assetOwner": "wert",
+            "machineModel": "eer",
+            "avgPowerConsumption": "20",
+            "efflevel": "29"
+        }]
+    }
+}

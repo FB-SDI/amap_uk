@@ -1,0 +1,7 @@
+{
+  "orchestrationConfigurationId": "",
+  "assetDataFieldsMap": {
+    "Input_for_processing": "Ingest.pump9",
+	"anomaly_tag": "Notification.pump9"
+  }
+}

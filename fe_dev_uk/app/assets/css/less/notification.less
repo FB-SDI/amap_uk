@@ -1,0 +1,122 @@
+.notificationContainer {
+    .notificationDateFilter{
+        color: #778896;
+        md-datepicker{
+            border: 1px solid #778896;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            margin-left: 25px;
+            .md-datepicker-button{
+                display: none;
+            }
+            input.md-datepicker-input{
+                color: #fff;
+                -webkit-text-stroke:#778896;
+                -webkit-text-fill-color:#778896;
+            }
+            .md-datepicker-triangle-button{
+                border-top-color: #778896 !important;
+            }
+            .md-datepicker-triangle-button.md-button.md-icon-button{
+                height: 42px;
+                width: 36px;
+                position: absolute;
+                padding: 15px;
+                top: 0px;
+                border-left: 1px solid #778896;
+                border-radius: 0px;
+                margin-right: -1px;
+                padding-left: 27px;
+            }
+        }
+        
+    }
+    .notificationFilter {
+        float: left;
+        padding-bottom: 30px;
+        color: #6b7b88;
+        span {
+            content: "";
+            padding: 0px;
+            margin-left: 12px;
+            border-radius: 8px;
+            padding-left: 15px;
+        }
+        div {
+            width: auto;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 25px;
+            background: #2d353a;
+            border: 0px;
+            margin-right: 15px;
+            font-size: 13px;
+            float: left;
+            &:hover {
+                //background: #126dfb;
+                color: #f4f4f4;
+                cursor: pointer;
+            }
+            &.active {
+                background: #126dfb;
+                color: #f4f4f4;
+            }
+            &:after {}
+        }
+    }
+    .dataStamp {
+        color: #c5d0d8;
+        border-bottom: 1px solid #3c444b;
+        font-weight: 600;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        padding-top: 30px;
+    }
+    .notificationRow {
+        color: #c1ccd4;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        &:before {} span {
+            content: "";
+            padding: 0;
+            margin-left: -5px;
+            border-radius: 8px;
+            padding-left: 0px;
+            padding-right: 16px;
+            margin-right: 10px;
+            &.PERFORMING_OPTIMALLY{
+                            background: #51e566;
+                            
+                        }
+                        &.PREDICTING_FAILURE{
+                            background: #f9e75a;
+                            
+                        }
+                        &.FAILURE{
+                            background: #f25170;
+                            
+                        }
+                        &.UNDERGOING_MAINTENANCE{
+                            background: #51aef3;
+                            
+                        }
+                        &.NO_DATA{
+                            background: #fc8c5a;
+                            
+                        }
+        }
+        .messageTime{
+            margin-left: 2px;
+            color: #738391;
+            text-transform: uppercase;
+            width: 85px;
+            float: left;
+        }
+        .viewPumpBtn {
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}

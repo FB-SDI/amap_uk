@@ -1,0 +1,19 @@
+<div class="analyticsMapContainer" ng-controller="analyticsMapController">
+    <div select-pump="pumpTypeList" selection="selection" class="selectPump"></div>
+    <h2 class="col-xs-6">Overall Analytics</h2>
+    <ul class="viewTab col-xs-6">
+        <li class="tabBtn mapTab" ng-click="selectTab('mapView')" ng-class="{'active':selectedTabCheck('mapView')}">
+            Map View
+        </li>
+        <li class="tabBtn analyticsTab" ng-click="selectTab('analyticsView')" ng-class="{'active':selectedTabCheck('analyticsView')}">
+            Analytics View
+        </li>
+
+    </ul>
+    <div ng-if="selectedTabCheck('analyticsView')">
+        <ng-include src=" '../../assets/templates/analyticsMapDashboard/analytics.html' "></ng-include>
+    </div>
+    <div ng-if="selectedTabCheck('mapView')">
+        <ng-include src=" '../../assets/templates/analyticsMapDashboard/mapLocation.html' "></ng-include>
+    </div>
+</div>

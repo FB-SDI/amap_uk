@@ -1,0 +1,51 @@
+<div ng-controller="analyticsController">
+    <div class="col-xs-8 analyticsDashboardSeg">
+        <div class="analyticsDashboardSegRow row">
+            <h4>PERFORMANCE METRICS</h4>
+            <div class="col-xs-4" id="metricChart">
+                <!--<div id="metricChart"></div>-->
+                <metric-chart data="perfMetricChartData" ng-if="callMetricDirective"></metric-chart>
+            </div>
+            <div class="col-xs-8">
+                <div class="perfTableHeaderRow row">
+                    <div class="perfTableHeaderColumn col-xs-6">
+                        Total Units
+                    </div>
+
+                    <div class="perfTableHeaderColumn col-xs-4">
+                        Units({{totalPump}})
+                    </div>
+                    <div class="perfTableHeaderColumn col-xs-2">
+                        100%
+                    </div>
+                </div>
+                <div class="perfTableRow row" ng-repeat="metricValue in filteredPerformanceMetrics" ng-click="setMetric(metricValue.label)" ng-class="{'active':selectedMetricCheck(metricValue.label)}">
+                    <div class="perfTableColumn col-xs-6" ng-click="redirectToAsset(metricValue.label)">
+                        <span ng-class="setStatusCircle(metricValue.label)"></span> {{metricValue.label}}
+                    </div>
+
+                    <div class="perfTableColumn col-xs-4">
+                        {{metricValue.units}}
+                    </div>
+                    <div class="perfTableColumn col-xs-2">
+                        {{metricValue.percentage}} %
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-xs-13 row" id="legendRow">
+            <div class="legendValue"><span class="optimal_performance"></span>Performing Optimally</div>
+            <div class="legendValue"><span class="failure_predicted"></span>Failure Predicted</div>
+            <div class="legendValue"><span class="failure"></span>Failure</div>
+            <div class="legendValue"><span class="maintenance"></span>Undergoing Maintenance</div>
+            <div class="legendValue"><span class="no_data"></span>No Data</div>
+        </div>
+    </div>
+
+    <div class="col-xs-3  analyticsDashboardSeg pull-right">
+        <h4>OVERALL EFFICIENCY</h4>
+        <div id="overallEffDiv"></div>
+    </div>
+</div>

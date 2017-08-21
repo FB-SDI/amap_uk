@@ -1,0 +1,29 @@
+{
+	"orchestrationStepId": "sid-10001",
+	"iterations": [{
+		"inputMaps": [{
+			"valueSourceType": "DATA_CONNECTOR",
+			"fullyQualifiedPortName": "data.time_series.ingest.value",
+			"fieldId": "ingest_tag",
+			"queryCriteria": {
+				"start": "1y-ago",
+				"end": "1s-ago"
+			},
+			"dataSourceId": "Predix Time Series"
+		}, {
+			"valueSourceType": "DATA_CONNECTOR",
+			"fullyQualifiedPortName": "data.time_series.discharge.value",
+			"fieldId": "discharge_tag",
+			"queryCriteria": {
+				"start": "1y-ago",
+				"end": "1s-ago"
+			},
+			"dataSourceId": "Predix Time Series"
+		}],
+		"outputMaps": [{
+			"fullyQualifiedPortName": "head_suction.step1",
+			"fieldId": "head_suction_tag",
+			"dataSourceId": "Predix Time Series"
+		}]
+	}]
+}

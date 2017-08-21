@@ -1,0 +1,24 @@
+<div class="notificationContainer row" ng-controller="notificationDashboardController">
+    <div class="col-xs-12 notificationFilter">
+        <div ng-click="all()" ng-class="{'active':!(notificationFilterList.FAILURE || notificationFilterList.PREDICTING_FAILURE || notificationFilterList.UNDERGOING_MAINTENANCE || notificationFilterList.NO_DATA)}">All Notification</div>
+        <div ng-click="failurePred()" ng-class="{'active':notificationFilterList.PREDICTING_FAILURE}">Failure Predicted<span class="failure_predicted"></span></div>
+        <div ng-click="failure()" ng-class="{'active':notificationFilterList.FAILURE}">Failure<span class="failure"></span></div>
+        <div ng-click="UnderMaintainance()" ng-class="{'active':notificationFilterList.UNDERGOING_MAINTENANCE}">Undergoing Maintanance<span class="maintenance"></span></div>
+        <div ng-click="noData()" ng-class="{'active':notificationFilterList.NO_DATA}">No Data<span class="no_data"></span></div>
+    </div>
+
+    <div class="notificationDateFilter col-xs-12">
+        Pick a Date Range:
+        <md-datepicker ng-model="fromDate" md-placeholder="From"></md-datepicker>
+        <md-datepicker ng-model="toDate" md-placeholder="To"></md-datepicker>
+    </div>
+
+    <div class="col-xs-12" ng-repeat="notificationGroup in notificationData | orderBy:orderByDate">
+
+        <div class="dataStamp col-xs-12">{{notificationGroup.dateStamp}}</div>
+        <div class="notificationRow col-xs-12" ng-repeat="notification in notificationGroup.notificationList | orderBy:orderByTime | notificationFilter:notificationFilterList  track by $index">
+            <div class="messageTime">{{notification.messageTime}}</div> <span ng-class="notification.machineStatus"></span>{{notification.message}}
+            <a class="viewPumpBtn pull-right" ng-href="/#/dashboard/assetdetail" ng-click="assetDetail(notification.assetId)">View Pump</a>
+        </div>
+    </div>
+</div>

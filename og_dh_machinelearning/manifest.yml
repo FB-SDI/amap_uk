@@ -1,0 +1,30 @@
+---
+applications:
+  - name: og-dh-machinelearning
+    buildpack: java_buildpack
+    path: target/machine-learning-2.1.10.jar	
+    memory: 1024M
+    timeout: 180
+    services:
+      - Salazar_uaa
+      - client1-predix-timeseries-1
+      - sulzer-analytics-runtime
+      - sulzer-analytics-catalog
+      
+
+env:
+    # NOTE: Some values in curly braces are updated by scripts
+    SPRING_PROFILES_ACTIVE : cloud
+    predix_uaa_name : Salazar_uaa
+#    predix_asset_name : predix-asset-test1
+   # predix_oauth_clientId : OAuth2-Harshaclient:client_secret
+    #used by predix acs-spring-security-extensions
+    #accessTokenEndpointUrl : https://780303f1-9dc5-4539-8fce-761898a149f3.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token
+    #clientId : OAuth2-Harshaclient
+    #clientSecret : client_secret
+    acsServiceInstanceName : predix-acs-test1
+#    predix_oauth_clientId : OAuth2-Harshaclient:client_secret
+    #used by predix acs-spring-security-extensions
+ #   accessTokenEndpointUrl : https://443e88b3-864a-4233-b35a-67598cbc7518.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token
+  #  clientId : OAuth2-Harshaclient
+   # clientSecret: client_secret

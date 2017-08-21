@@ -1,0 +1,47 @@
+{
+    "data": {
+        "notificationData": [{
+            "dateStamp": "04/12/2017",
+            "notificationList": [{
+                "machineStatus": "PREDICTING_FAILURE",
+                "statusIcon": "yellow",
+                "message": "Failure predicted in pump SUZ-CUS-834",
+                "assetId": "SUZ-CUS-834",
+                "messageTime": "05:00 AM"
+            }, {
+                "machineStatus": "FAILURE",
+                "statusIcon": "red",
+                "message": "Pump SUZ-CUS2-834 has failed",
+                "assetId": "SUZ-CUS2-834",
+                "messageTime": "12:00 AM"
+            }, {
+                "machineStatus": "UNDERGOING_MAINTENANCE",
+                "statusIcon": "blue",
+                "message": "Maintenance has been started on Pump SUZ-CUS2-834",
+                "assetId": "SUZ-CUS2-834",
+                "messageTime": "10:00 PM"
+            }]
+        }, {
+            "dateStamp": "04/10/2017",
+            "notificationList": [{
+                "machineStatus": "PREDICTING_FAILURE",
+                "statusIcon": "yellow",
+                "message": "Failure predicted in pump SUZ-CUS-834",
+                "assetId": "SUZ-CUS-834",
+                "messageTime": "05:00 PM"
+            }, {
+                "machineStatus": "FAILURE",
+                "statusIcon": "red",
+                "message": "Pump SUZ-CUS2-834 has failed",
+                "assetId": "SUZ-CUS2-834",
+                "messageTime": "05:30 PM"
+            }, {
+                "machineStatus": "UNDERGOING_MAINTENANCE",
+                "statusIcon": "blue",
+                "message": "Maintenance has been started on Pump SUZ-CUS2-834",
+                "assetId": "SUZ-CUS2-834",
+                "messageTime": "11:20 PM"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,108 @@
+<div data-ng-controller="assetManagementController" class="assetManagmentContainer row">
+    <div class="assetFilterContainer col-xs-12">
+        <div class="filterExpanded" ng-class="{'hidden':!filterActive}">
+            <span class="resetFilter" ng-click="resetFilter();">Reset</span>
+            <div class="assetFilterHeader">
+                <span class="filterBullet" ng-click=" toggleKeyFilter('manufacturer');" ng-class="{'active':activeManufacturerFilter}">
+                    Filter By Manufacturer
+                    <span class="selectedFilterVal">{{selectedManufacturerFilterList.length}}</span>
+                </span>
+                <span class="filterBullet" ng-click="toggleKeyFilter('modelName');" ng-class="{'active':activeModelNameFilter}">
+                    Filter By Model Name
+                    <span class="selectedFilterVal">{{selectedModelNameFilterList.length}}</span>
+                </span>
+            </div>
+            <div class="assetFilterValue">
+                <div class="assetFilterValueManufacturer" ng-show="activeManufacturerFilter">
+                    <span class="filterBullet" ng-repeat="asset in manufacturerList" ng-click="filterAssetList('manufacturer',asset.manufacturer,asset)" ng-class="{ 'active':checkActiveFilterForValue( 'manufacturer',asset.manufacturer)}">
+                        {{asset.manufacturer}}
+                    </span>
+                </div>
+                <div class="assetFilterValueModelName" ng-show="activeModelNameFilter">
+                    <span class="filterBullet" ng-repeat="asset in modelNameList" ng-click="filterAssetList('modelName',asset.modelName,asset)" ng-class="{ 'active':checkActiveFilterForValue( 'modelName',asset.modelName)}">
+                        {{asset.modelName}}
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="filterCollapsed col-xs-12" ng-class="{'hidden':filterActive}">
+            <button ng-click="filterActive = true">Filter</button>
+        </div>
+    </div>
+    <div class="pagination col-xs-12">
+        <ul>
+            <li ng-class="{disabled: currentPage==0 }">
+                <a href ng-click="currentPage> 0? currentPage=currentPage-1:''">« Prev</a>
+            </li>
+            <li ng-repeat="n in [] | range:numberOfPages" ng-class="{active: n == currentPage}">
+                <a href ng-bind="n + 1" ng-click="setPage(n)">n</a>
+            </li>
+            <li ng-class="{disabled: currentPage == (filteredAssetList.length / pageSize) - 1}">
+                <a href ng-click="currentPage < numberOfPages - 1?currentPage=currentPage+1:''">Next »</a>
+            </li>
+        </ul>
+    </div>
+    <button class="createAsset" ng-click="createAssetDetail()">Create Asset</button>
+    <ul class="assetsList col-xs-12">
+        <li data-ng-repeat="asset in filteredAssetList | startFrom:currentPage*pageSize | limitTo:pageSize" class="col-xs-12" ng-href="/#/dashboard/assetdetail" ng-click="assetDetail(asset.uri)">
+            <div class="assetId col-xs-12">
+                <span class="assetIcon" ng-class="setStatusAsset(asset.analyticAttributes.machineStatus)"></span> {{asset.serialNumber}}
+            </div>
+            <div class="assetDetails col-xs-12">
+                <div class="assetGroupDetail col-xs-8">
+                    <img src="../assets/images/{{asset.image_url}}" style="width:auto; height:150px;" class="assetImg hidden-xs col-sm-3"></img>
+                    <div class="leftAssetGroup col-xs-4 col-sm-3">
+                        <div class="rowOne col-xs-12">
+                            <span class="assetHeader">Manufacturer</span>
+                            <div class="assetVal">{{asset.manufacturer}}</div>
+                        </div>
+                        <div class="rowTwo col-xs-12">
+                            <span class="assetHeader">Manufactured Date</span>
+                            <div class="assetVal">{{asset.manufacturedDate}}</div>
+                        </div>
+                        <div class="rowThree col-xs-12">
+                            <span class="assetHeader">Model Name</span>
+                            <div class="assetVal">{{asset.modelName}}</div>
+                        </div>
+                    </div>
+                    <div class="middleAssetGroup col-xs-4 col-sm-3">
+                        <div class="rowOne col-xs-12">
+                            <span class="assetHeader">Machine HP</span>
+                            <div class="assetVal">{{asset.machineHorsePower}} HP</div>
+                        </div>
+                        <div class="rowTwo col-xs-12">
+                            <span class="assetHeader">Last Maintenance Date</span>
+                            <div class="assetVal">{{asset.lastMaintenanceDate}}</div>
+                        </div>
+                        <div class="rowThree col-xs-12">
+                        </div>
+                    </div>
+                    <div class="rightAssetGroup col-xs-4 col-sm-2">
+                        <div class="rowOne col-xs-12">
+                            <span class="assetHeader">Current Latitude</span>
+                            <div class="assetVal">{{asset.latitude}}</div>
+                        </div>
+                        <div class="rowTwo col-xs-12">
+                            <span class="assetHeader">Current Longitude</span>
+                            <div class="assetVal">{{asset.longitude}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="assetEfficiencyDetail col-xs-4">
+                    <div class="col-xs-6">
+                        <div class="rowOne col-xs-12">
+                            <span class="assetHeader">Capacity</span>
+                            <div class="assetVal">{{asset.maxPowerConsumption}} m3/h</div>
+                        </div>
+                        <div class="rowTwo col-xs-12">
+                            <span class="assetHeader">Max Pressure</span>
+                            <div class="assetVal">{{asset.suctionPressureRequired}} psi</div>
+                        </div>
+                    </div>
+                    <div pump-efficiency-directive class="col-xs-4 hidden-xs pumpefficiencyval" id="pumpefficiencyval" pumpefficiencyval="{{asset.analyticAttributes.machineEfficiencyLevel}}"></div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

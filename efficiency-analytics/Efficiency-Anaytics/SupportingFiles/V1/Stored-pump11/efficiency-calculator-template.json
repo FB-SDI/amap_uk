@@ -1,0 +1,53 @@
+{
+  "analyticName": "efficiencycalculator_pump11",
+  "analyticVersion": "1.0",
+  "inputPortDefinitions": [
+    {
+      "portType": "COMPOSITE",
+      "portName": "data",
+      "variable": false,
+      "childrenPorts": [
+        {
+          "portName": "time_series",
+          "portType": "TIMESERIES_ARRAY",
+          "required": true,
+          "variable": false,
+          "columns": [
+            {
+              "portName": "intake",
+              "portType": "FIELD",
+              "variable": false,
+              "dataType": "DOUBLE_ARRAY",
+              "required": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "outputPortDefinitions": [
+    {
+      "portName": "data",
+      "portType": "COMPOSITE",
+      "required": true,
+      "variable": false,
+      "childrenPorts": [
+        {
+          "portName": "time_series",
+          "portType": "TIMESERIES_ARRAY",
+          "required": true,
+          "variable": false,
+          "columns": [
+            {
+              "portName": "efficiency",
+              "portType": "FIELD",
+              "variable": false,
+              "dataType": "DOUBLE_ARRAY",
+              "required": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

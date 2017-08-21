@@ -1,0 +1,11 @@
+<div ng-controller="mapLocationController">
+    <div class="mapFilter col-xs-12">
+        <div ng-click="all()" ng-class="{'active':!(mapFilterList.FAILURE || mapFilterList.PREDICTING_FAILURE|| mapFilterList.PERFORMING_OPTIMALLY || mapFilterList.UNDERGOING_MAINTENANCE|| mapFilterList.NO_DATA)}">All Products</div>
+        <div ng-click="performingOptimally()" ng-class="{'active':mapFilterList.PERFORMING_OPTIMALLY}">Performing Optimally<span class="optimal_performance"></span></div>
+        <div ng-click="failurePred()" ng-class="{'active':mapFilterList.PREDICTING_FAILURE}">Failure Predicted<span class="failure_predicted"></span></div>
+        <div ng-click="failure()" ng-class="{'active':mapFilterList.FAILURE}">Failure<span class="failure"></span></div>
+        <div ng-click="underMaintainance()" ng-class="{'active':mapFilterList.UNDERGOING_MAINTENANCE}">Maintenance<span class="maintenance"></span></div>
+        <div ng-click="noData()" ng-class="{'active':mapFilterList.NO_DATA}">No Data<span class="no_data"></span></div>
+    </div>
+    <div id="outdoorMap" class="col-xs-12"></div>
+</div>

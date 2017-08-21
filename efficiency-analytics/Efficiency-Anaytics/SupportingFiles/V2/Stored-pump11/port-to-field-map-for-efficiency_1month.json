@@ -1,0 +1,28 @@
+{
+    "analyticName": "efficiencycalculator_pump11",
+    "analyticVersion": "v2",
+    "orchestrationStepId": "EfficiencyRuntime_pump11_1month_v2",
+    "iterations": [
+        {
+            "inputMaps": [
+                {
+                    "valueSourceType": "DATA_CONNECTOR",
+                    "fullyQualifiedPortName": "data.time_series.intake",
+                    "fieldId": "intake_tag",
+                    "queryCriteria": {
+						"start": "1mm-ago",
+						"end": "1s-ago"
+					  },
+                    "dataSourceId": "PredixTimeSeries"
+                }
+            ],
+            "outputMaps": [
+                {
+                    "fullyQualifiedPortName": "data.time_series.efficiency",
+                    "fieldId": "anomaly_tag",
+                    "dataSourceId": "PredixTimeSeries"
+                }
+            ]
+        }
+    ]
+}

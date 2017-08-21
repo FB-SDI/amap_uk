@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             expressionLanguage="http://www.w3.org/1999/XPath" id="sid-81430087-7a44-4be3-8517-914faf923256"
+             targetNamespace="DSP-PM" typeLanguage="http://www.w3.org/2001/XMLSchema"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd"
+             xmlns:activiti="http://activiti.org/bpmn">
+
+    <process id="CavitationRuntime_pump11_1day" isExecutable="true">
+
+        <startEvent id="startEvent"
+                    name="">
+            <outgoing>start-to-CavitationRuntime_pump11_1day</outgoing>
+        </startEvent>
+
+        <serviceTask completionQuantity="1"
+                     id="CavitationRuntime_pump11_1day"
+                     isForCompensation="false"
+                     name="870871ac-bdf5-4ef8-a665-f7c4d729e82a::cavitationcalculator_pump11::v1"
+                     startQuantity="1"
+                     activiti:delegateExpression="${javaDelegate}"
+                     xmlns:activiti="http://activiti.org/bpmn">
+            <incoming>start-to-CavitationRuntime_pump11_1day</incoming>
+            <outgoing>CavitationRuntime_pump11_1day-to-end</outgoing>
+        </serviceTask>
+
+        <endEvent id="endEvent" name="">
+            <incoming>CavitationRuntime_pump11_1day-to-end</incoming>
+        </endEvent>
+
+
+        <sequenceFlow id="start-to-CavitationRuntime_pump11_1day"
+                      name="" sourceRef="startEvent"
+                      targetRef="CavitationRuntime_pump11_1day"/>
+
+        <sequenceFlow id="CavitationRuntime_pump11_1day-to-end"
+                      name="" sourceRef="CavitationRuntime_pump11_1day" targetRef="endEvent"/>
+
+    </process>
+
+</definitions>

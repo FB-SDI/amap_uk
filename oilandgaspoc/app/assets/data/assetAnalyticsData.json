@@ -1,0 +1,9 @@
+{
+    "data": {
+        "analyticsInfo": {
+            "machineStatusCode": "PREDICTING_FAILURE",
+            "machineStatus": "Predicting Failure",
+            "cavitationValue": 90
+        }
+    }
+}

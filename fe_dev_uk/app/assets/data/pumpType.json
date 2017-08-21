@@ -1,0 +1,13 @@
+{
+    "data": {
+        "pumpType": [{
+                "label": "Axial Flow",
+                "value": "AXIAL_FLOW"
+            },
+            {
+                "label": "Barrel",
+                "value": "BARREL"
+            }
+        ]
+    }
+}

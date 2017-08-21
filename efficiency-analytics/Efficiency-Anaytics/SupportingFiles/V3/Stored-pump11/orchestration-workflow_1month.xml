@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             expressionLanguage="http://www.w3.org/1999/XPath" id="sid-81430087-7a44-4be3-8517-914faf923256"
+             targetNamespace="DSP-PM" typeLanguage="http://www.w3.org/2001/XMLSchema"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd"
+             xmlns:activiti="http://activiti.org/bpmn">
+
+    <process id="EfficiencyRuntime_pump11_1month_v3" isExecutable="true">
+
+        <startEvent id="startEvent"
+                    name="">
+            <outgoing>start-to-EfficiencyRuntime_pump11_1month_v3</outgoing>
+        </startEvent>
+
+        <serviceTask completionQuantity="1"
+                     id="EfficiencyRuntime_pump11_1month_v3"
+                     isForCompensation="false"
+                     name="fa250c89-0b8e-4059-8d6b-18400d28d573::efficiencycalculator_pump11::v3"
+                     startQuantity="1"
+                     activiti:delegateExpression="${javaDelegate}"
+                     xmlns:activiti="http://activiti.org/bpmn">
+            <incoming>start-to-EfficiencyRuntime_pump11_1month_v3</incoming>
+            <outgoing>EfficiencyRuntime_pump11_1month_v3-to-end</outgoing>
+        </serviceTask>
+
+        <endEvent id="endEvent" name="">
+            <incoming>EfficiencyRuntime_pump11_1month_v3-to-end</incoming>
+        </endEvent>
+
+
+        <sequenceFlow id="start-to-EfficiencyRuntime_pump11_1month_v3"
+                      name="" sourceRef="startEvent"
+                      targetRef="EfficiencyRuntime_pump11_1month_v3"/>
+
+        <sequenceFlow id="EfficiencyRuntime_pump11_1month_v3-to-end"
+                      name="" sourceRef="EfficiencyRuntime_pump11_1month_v3" targetRef="endEvent"/>
+
+    </process>
+
+</definitions>

@@ -1,0 +1,7 @@
+[
+{"machineStatus":"failure predicted","statusIcon":"yellow","date":"16-Mar-2017","message":"Failure predicted in pump SUZ-CUS-834", "assetId":"SUZ-CUS-834"},
+{"machineStatus":"failure","statusIcon":"red","date":"16-Mar-2017","message":"Pump SUZ-CUS2-834 has failed", "assetId":"SUZ-CUS2-834"}
+]
+
+	
+	

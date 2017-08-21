@@ -1,0 +1,107 @@
+Catalog-Zone-id : 92daaff9-9654-483e-9ed5-ac0c81510504
+runtime_zone": 452e08f8-ab8c-44a6-903b-90478325adf2
+============================================================================================
+Analytic Catalog 
+-----------------------------
+- EntryId
+{
+    "id": "ff3e1d53-e0c7-4090-b5ec-3580b5ac9cd9",
+    "name": "efficiencycalculator_pump9",
+    "author": "ggupta",
+    "description": "This Java app will calculate efficiency using Ingest timeseries data:Added new attributes",
+    "version": "v3",
+    "supportedLanguage": "Java",
+    "customMetadata": "{\"assetid\":\"xyz\"}",
+    "taxonomyLocation": "/uncategorized",
+    "state": null,
+    "access": "FULL",
+    "createdTimestamp": "2017-07-24T13:18:30+00:00",
+    "updatedTimestamp": "2017-07-24T13:18:30+00:00"
+}
+
+{
+  "artifacts": [
+    {
+      "id": "4151fe7e-1a04-4239-840b-e83a57301a71",
+      "filename": "efficiency-analytics-3.0.0.jar",
+      "type": "Executable",
+      "description": "Calculate efficiency with newly added attributes",
+      "createdTimestamp": "2017-07-25T04:45:20+00:00",
+      "updatedTimestamp": "2017-07-25T04:45:20+00:00"
+    },
+    {
+      "id": "452c956b-e0e1-4ca5-a80a-1d405192db6c",
+      "filename": "efficiency-calculator-template.json",
+      "type": "template",
+      "description": "Calculate efficiency with newly added attributes",
+      "createdTimestamp": "2017-07-25T04:46:04+00:00",
+      "updatedTimestamp": "2017-07-25T04:46:04+00:00"
+    }
+  ]
+}
+
+
+
+============================================================================================
+Analytic Runtime 
+-----------------------------
+# 1 month
+{
+    "id": "bd55699b-f67c-4414-a7da-cdca67390543",
+    "name": "EfficiencyRuntime_pump9_1month_v3",
+    "author": "ggupta",
+    "description": "This workflow orchestration for reading data from asset and excute efficiency calculator.",
+    "createdTimestamp": "2017-07-31T13:44:47+00:00",
+    "updatedTimestamp": "2017-07-31T13:44:47+00:00"
+}
+
+Runtime RequestBody:
+{
+     "orchestrationConfigurationId": "bd55699b-f67c-4414-a7da-cdca67390543",
+     "assetDataFieldsMap": {
+         "intake_tag": "Ingest.pump9",
+         "anomaly_tag" : "Notification.pump9"
+     }
+}
+
+
+ 
+
+# 1 week
+{
+    "id": "1876e723-0adf-4745-a287-baf4eba6a95b",
+    "name": "EfficiencyRuntime_pump9_1week_v3",
+    "author": "ggupta",
+    "description": "This workflow orchestration for reading data from asset and excute efficiency calculator.",
+    "createdTimestamp": "2017-07-31T13:28:04+00:00",
+    "updatedTimestamp": "2017-07-31T13:28:04+00:00"
+}
+
+Runtime RequestBody:
+{
+     "orchestrationConfigurationId": "1876e723-0adf-4745-a287-baf4eba6a95b",
+     "assetDataFieldsMap": {
+         "intake_tag": "Ingest.pump9",
+         "anomaly_tag" : "Notification.pump9"
+     }
+}
+ 
+ 
+ 
+# 1 day
+{
+    "id": "9455d9a7-0cf6-4c5d-b6a5-3d7ab5a5878f",
+    "name": "EfficiencyRuntime_pump9_1day_v3",
+    "author": "ggupta",
+    "description": "This workflow orchestration for reading data from asset and excute efficiency calculator.",
+    "createdTimestamp": "2017-07-31T13:21:31+00:00",
+    "updatedTimestamp": "2017-07-31T13:21:31+00:00"
+}
+Runtime RequestBody:
+{
+     "orchestrationConfigurationId": "9455d9a7-0cf6-4c5d-b6a5-3d7ab5a5878f",
+     "assetDataFieldsMap": {
+         "intake_tag": "Ingest.pump9",
+         "anomaly_tag" : "Notification.pump9"
+     }
+}

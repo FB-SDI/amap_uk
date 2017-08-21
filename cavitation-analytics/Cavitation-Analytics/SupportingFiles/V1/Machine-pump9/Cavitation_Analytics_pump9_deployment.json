@@ -1,0 +1,177 @@
+Catalog-Zone-id : 92daaff9-9654-483e-9ed5-ac0c81510504
+runtime_zone": 452e08f8-ab8c-44a6-903b-90478325adf2
+============================================================================================
+Analytic Catalog 
+-----------------------------
+- EntryId
+{
+  "id": "9a91f4a4-7731-4304-bf00-cb65ddfdd45d",
+  "name": "cavitationcalculator_pump9",
+  "author": "ggupta",
+  "description": "This Java app will calculate cavitation using Ingest and Discharge timeseries data.",
+  "version": "v1",
+  "supportedLanguage": "Java",
+  "customMetadata": "{\"assetid\":\"xyz\"}",
+  "taxonomyLocation": "/uncategorized",
+  "state": null,
+  "access": "FULL",
+  "createdTimestamp": "2017-05-18T08:55:38+00:00",
+  "updatedTimestamp": "2017-05-18T08:55:38+00:00"
+}
+
+{
+  "id": "bfd719db-a9a9-46dd-9b4e-6a79c5af915f",
+  "filename": "cavitation-analytics-1.0.0.jar",
+  "type": "Executable",
+  "description": "This Java app will calculate cavitation using Ingest and Discharge timeseries data.",
+  "createdTimestamp": "2017-05-18T09:00:46+00:00",
+  "updatedTimestamp": "2017-05-18T09:00:46+00:00"
+}
+
+{
+  "id": "f47e93e8-2da2-4046-9b21-f5a34e8bdf90",
+  "filename": "cavitation-calculator-template.json",
+  "type": "template",
+  "description": "This Java app will calculate cavitation using Ingest and Discharge timeseries data.",
+  "createdTimestamp": "2017-05-18T09:01:44+00:00",
+  "updatedTimestamp": "2017-05-18T09:01:44+00:00"
+}
+
+
+============================================================================================
+Analytic Runtime 
+-----------------------------
+# 1 month
+{
+  "id": "0a1f2fcc-affb-48b8-a27a-892b49dcfe60",
+  "name": "CavitationRuntime_pump9_1month",
+  "author": "ggupta",
+  "description": "This workflow orchestration for reading data from asset and excute cavitation calculation.",
+  "createdTimestamp": "2017-05-18T09:31:52+00:00",
+  "updatedTimestamp": "2017-05-18T09:31:52+00:00"
+}
+
+{
+  "id": "7912bde0-1147-4235-bacc-4d79f4e3ad38",
+  "name": "orchestration workflow file",
+  "type": "bpmn",
+  "filename": "orchestration-workflow.xml",
+  "stepId": "CavitationRuntime_pump9_1month",
+  "description": "cavitator-calculator",
+  "createdTimestamp": "2017-05-18T09:34:04+00:00",
+  "updatedTimestamp": "2017-05-18T09:34:04+00:00"
+}
+{
+  "id": "cdc2c0e2-2672-4f5b-9d2e-4e1c68ab56bd",
+  "name": "cavitator-calculator",
+  "type": "portToFieldMap",
+  "filename": "port-to-field-map-for-cavitation.json",
+  "stepId": "CavitationRuntime_pump9_1month",
+  "description": null,
+  "createdTimestamp": "2017-05-18T09:34:45+00:00",
+  "updatedTimestamp": "2017-05-18T09:34:45+00:00"
+}
+
+
+Runtime RequestBody:
+{
+     "orchestrationConfigurationId": "0a1f2fcc-affb-48b8-a27a-892b49dcfe60"
+     "assetDataFieldsMap": {
+         "intake_tag": "Ingest.pump9",
+         "digest_tag": "Discharge.pump9",
+         "head_suction_tag": "Cavitation.pump9"
+     }
+}
+
+
+
+# 1 week
+{
+  "id": "e2abad0d-ea40-4d59-b9ff-a6a9136113b6",
+  "name": "CavitationRuntime_pump9_1week",
+  "author": "ggupta",
+  "description": "This workflow orchestration for reading data from asset and excute cavitation calculation.",
+  "createdTimestamp": "2017-05-18T09:56:47+00:00",
+  "updatedTimestamp": "2017-05-18T09:56:47+00:00"
+}
+{
+  "id": "c82005e1-8cea-4be1-bc6a-f33acecb7444",
+  "name": "orchestration workflow file",
+  "type": "bpmn",
+  "filename": "orchestration-workflow_1week.xml",
+  "stepId": "CavitationRuntime_pump9_1week",
+  "description": "cavitator-calculator",
+  "createdTimestamp": "2017-05-18T10:01:52+00:00",
+  "updatedTimestamp": "2017-05-18T10:01:52+00:00"
+}
+{
+  "id": "65e025a4-7cff-4b71-87b0-ff1de6f7fa2e",
+  "name": "cavitator-calculator",
+  "type": "portToFieldMap",
+  "filename": "port-to-field-map-for-cavitation_1week.json",
+  "stepId": "CavitationRuntime_pump9_1week",
+  "description": null,
+  "createdTimestamp": "2017-05-18T10:02:05+00:00",
+  "updatedTimestamp": "2017-05-18T10:02:05+00:00"
+}
+
+Runtime RequestBody:
+{
+     "orchestrationConfigurationId": "e2abad0d-ea40-4d59-b9ff-a6a9136113b6"
+     "assetDataFieldsMap": {
+         "intake_tag": "Ingest.pump9",
+         "digest_tag": "Discharge.pump9",
+         "head_suction_tag": "Cavitation.pump9"
+     }
+ }
+
+ 
+ 
+ 
+# 1 day
+{
+  "id": "66ce0750-df4b-4d06-b77e-0cc91af82b2d",
+  "name": "CavitationRuntime_pump9_1day",
+  "author": "ggupta",
+  "description": "This workflow orchestration for reading data from asset and excute cavitation calculation.",
+  "createdTimestamp": "2017-05-18T10:08:22+00:00",
+  "updatedTimestamp": "2017-05-18T10:08:22+00:00"
+}
+{
+  "id": "e6dbba53-5f1b-4544-91de-9372ab931c94",
+  "name": "orchestration workflow file",
+  "type": "bpmn",
+  "filename": "orchestration-workflow_1day.xml",
+  "stepId": "CavitationRuntime_pump9_1day",
+  "description": "cavitator-calculator",
+  "createdTimestamp": "2017-05-18T10:09:57+00:00",
+  "updatedTimestamp": "2017-05-18T10:09:57+00:00"
+}
+{
+  "id": "ba8cfd51-8455-45e4-978d-b8ddc97a6279",
+  "name": "cavitator-calculator",
+  "type": "portToFieldMap",
+  "filename": "port-to-field-map-for-cavitation_1day.json",
+  "stepId": "CavitationRuntime_pump9_1day",
+  "description": null,
+  "createdTimestamp": "2017-05-18T10:10:15+00:00",
+  "updatedTimestamp": "2017-05-18T10:10:15+00:00"
+}
+
+Runtime RequestBody:
+{
+     "orchestrationConfigurationId": "66ce0750-df4b-4d06-b77e-0cc91af82b2d",
+     "assetDataFieldsMap": {
+         "intake_tag": "Ingest.pump9",
+         "digest_tag": "Discharge.pump9",
+         "head_suction_tag": "Cavitation.pump9"
+     }
+ }
+
+
+
+
+
+
+
+

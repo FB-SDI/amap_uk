@@ -1,0 +1,23 @@
+SetupInstructions to run the project:
+
+  sudo npm install -g grunt-cli
+  sudo npm install -S grunt
+  sudo npm install grunt-contrib-compress --save-dev
+  sudo npm install grunt-contrib-watch --save-dev
+  sudo npm install grunt-contrib-jshint --save-dev
+  sudo npm install grunt-contrib-uglify --save-dev
+  sudo npm install grunt-contrib-concat --save-dev
+  sudo npm install grunt-contrib-cssmin --save-dev
+  sudo npm install grunt-contrib-less --save-dev
+  sudo npm install grunt-express-server --save-dev
+  sudo npm install express
+  sudo npm install http
+  sudo npm install open
+
+If you can see the package.json file and all the other prerequisites has already been installed you just have to run(from within you project's root directory):
+   
+   sudo npm install
+
+To execute the project,run from CLI:
+
+   grunt serve 

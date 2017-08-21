@@ -1,0 +1,11 @@
+---
+applications:
+  - name: oil_gas_dh_service_max
+    buildpack: java_buildpack
+    path: target/oil_gas_dh_service_max-1.0.0.jar	
+    memory: 512M
+    timeout: 120
+env:
+     SPRING_PROFILES_ACTIVE : cloud
+
+

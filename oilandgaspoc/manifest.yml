@@ -1,0 +1,17 @@
+---
+applications:
+  - name: ui-test
+    buildpack: java_buildpack
+    path: target/timeseries-bootstrap-2.1.10.jar
+    memory: 512M
+    timeout: 120
+services:
+    - salazar_view
+    - salazar_redis
+    - sulzer_timeseries
+env:
+    UAA_SERVER_URL: https://53b73921-acac-43d0-bef2-a8ec78d216ec.predix-uaa.run.aws-usw02-pr.ice.predix.io
+    REDIS: redis-17
+    VIEW_SERVICE_URI: https://predix-views.run.aws-usw02-pr.ice.predix.io
+    CLIENTID: test_client
+    BASE64CLIENTCREDENTIAL: dGVzdF9jbGllbnQ6dGVzdHNlY3JldA==

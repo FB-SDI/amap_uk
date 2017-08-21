@@ -1,0 +1,64 @@
+[{
+        "uri": "/machine/1",
+        "modelName": "API610",
+        "manufacturer": "GreatCO",
+        "serialNumber": "ER24123",
+        "machineHorsePower": 100,
+        "latitude": "45.207111",
+        "longitude": "-0.381556",
+        "suctionPressureRequired": 200,
+        "maxPowerConsumption": 100,
+        "lastMaintenanceDate": "1/1/2001",
+        "manufacturedDate": "1/10/1997",
+        "tsIdentifier_ingest": "Ingest.pump9",
+        "tsIdentifier_discharge": "Discharge.pump9",
+        "tsIdentifier_energyConsumption": "EnergyConsumption.pump9",
+        "analyticAttributes": {
+            "averagePowerConsumption": 90,
+            "machineEfficiencyLevel": 85,
+            "machineStatus": "Performing Optimally"
+        }
+    },
+    {
+        "uri": "/machine/2",
+        "modelName": "ASMEB73.1",
+        "manufacturer": "AnGreatCO",
+        "serialNumber": "ASMEB73.1",
+        "machineHorsePower": 100,
+        "latitude": "46.207111",
+        "longitude": "-2.381556",
+        "suctionPressureRequired": 200,
+        "maxPowerConsumption": 100,
+        "lastMaintenanceDate": "1/1/2001",
+        "manufacturedDate": "1/10/1997",
+        "tsIdentifier_ingest": "Ingest.pump10",
+        "tsIdentifier_discharge": "Discharge.pump10",
+        "tsIdentifier_energyConsumption": "EnergyConsumption.pump10",
+        "analyticAttributes": {
+            "averagePowerConsumption": 60,
+            "machineEfficiencyLevel": 50,
+            "machineStatus": "Predicting Failure"
+        }
+    },
+    {
+        "uri": "/machine/3",
+        "modelName": "VMS",
+        "manufacturer": "GreatCO",
+        "serialNumber": "ASMEB73.1",
+        "machineHorsePower": 100,
+        "latitude": "45.207111",
+        "longitude": "-2.381556",
+        "suctionPressureRequired": 200,
+        "maxPowerConsumption": 100,
+        "lastMaintenanceDate": "1/10/2001",
+        "manufacturedDate": "1/10/1998",
+        "tsIdentifier_ingest": "Ingest.pump11",
+        "tsIdentifier_discharge": "Discharge.pump11",
+        "tsIdentifier_energyConsumption": "EnergyConsumption.pump11",
+        "analyticAttributes": {
+            "averagePowerConsumption": 70,
+            "machineEfficiencyLevel": 65,
+            "machineStatus": "No data"
+        }
+    }
+]

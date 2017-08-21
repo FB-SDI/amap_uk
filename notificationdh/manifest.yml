@@ -1,0 +1,14 @@
+---
+applications:
+  - name: oil-gas-dh-notifications
+    buildpack: java_buildpack
+    path: target/oil_gas_DH_Notifications-1.0.0.jar
+    memory: 512M
+    timeout: 120
+    services:
+      - Salazar_uaa
+      
+env:
+     SPRING_PROFILES_ACTIVE : cloud
+
+

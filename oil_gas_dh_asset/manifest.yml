@@ -1,0 +1,14 @@
+---
+applications:
+  - name: oil-gas-dh-assert
+    buildpack: java_buildpack
+    path: target/oil_gas_DH_Asset-1.0.0.jar	
+    memory: 512M
+    timeout: 120
+    services:
+      - Salazar_uaa
+      - client1-predix-timeseries-1
+env:
+     SPRING_PROFILES_ACTIVE : cloud
+
+

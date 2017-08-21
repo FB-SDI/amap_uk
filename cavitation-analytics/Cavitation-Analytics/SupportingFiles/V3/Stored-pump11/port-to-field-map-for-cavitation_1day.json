@@ -1,0 +1,38 @@
+{
+    "analyticName": "cavitationcalculator_pump11",
+    "analyticVersion": "v3",
+    "orchestrationStepId": "CavitationRuntime_pump11_1day_v3",
+    "iterations": [
+        {
+            "inputMaps": [
+                {
+                    "valueSourceType": "DATA_CONNECTOR",
+                    "fullyQualifiedPortName": "data.time_series.intake",
+                    "fieldId": "intake_tag",
+                    "queryCriteria": {
+						"start": "1d-ago",
+						"end": "1s-ago"
+					  },
+                    "dataSourceId": "PredixTimeSeries"
+                },
+                {
+                    "valueSourceType": "DATA_CONNECTOR",
+                    "fullyQualifiedPortName": "data.time_series.discharge",
+                    "fieldId": "digest_tag",
+                    "queryCriteria": {
+						"start": "1d-ago",
+						"end": "1s-ago"
+					  },
+                    "dataSourceId": "PredixTimeSeries"
+                }
+            ],
+            "outputMaps": [
+                {
+                    "fullyQualifiedPortName": "data.time_series.cavitation",
+                    "fieldId": "head_suction_tag",
+                    "dataSourceId": "PredixTimeSeries"
+                }
+            ]
+        }
+    ]
+}

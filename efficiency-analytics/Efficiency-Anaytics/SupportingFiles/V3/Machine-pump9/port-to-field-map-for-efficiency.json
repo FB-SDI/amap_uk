@@ -1,0 +1,32 @@
+{
+    "analyticName": "effiency-calculator",
+    "analyticVersion": "v3",
+    "orchestrationStepId": "EfficiencyCalculatorOrchestration",
+    "iterations": [
+        {
+            "inputMaps": [
+                {
+                    "valueSourceType": "DATA_CONNECTOR",
+                    "fullyQualifiedPortName": "data.time_series.numberArray",
+                    "fieldId": "Input_for_processing",
+                    "queryCriteria": {
+						"start": "1y-ago",
+						"tags": [{
+						   "order": "desc"
+						}
+						]
+					  },
+                    "dataSourceId": "PredixTimeSeries"
+                }
+            ],
+            "outputMaps": [
+                {
+                    "fullyQualifiedPortName": "data.time_series.efficiency",
+                    "fieldId": "Output_for_processing",
+					"engUnit": "kw",
+                    "dataSourceId": "PredixTimeSeries"
+                }
+            ]
+        }
+    ]
+}

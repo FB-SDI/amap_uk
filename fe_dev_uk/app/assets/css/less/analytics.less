@@ -1,0 +1,136 @@
+.analyticsDashboardSeg {
+    .analyticsDashboardSegRow {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    background: #2f3539;
+    margin-right: 15px;
+    padding-top: 30px;
+    color: #c5d0d8;
+    h4 {
+        font-weight: 400;
+        padding-bottom: 25px;
+    }
+    #metricChart {
+        padding: 0;
+        height: 300px;
+    }
+    .perfTableHeaderRow {
+        font-weight: 600;
+        font-size: 14px;
+        padding-bottom: 10px;
+        border-bottom: #c5d0d8 solid 1px;
+        font-size: 16px;
+    }
+    .perfTableRow {
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    .perfTableRow.active {
+        background: #22272b;
+    }
+    .perfTableRow:first-child {
+        padding-top: 15px;
+    }
+    span {
+        content: "";
+        padding: 0px;
+        margin-right: 12px;
+        border-radius: 8px;
+        padding-left: 16px;
+        &.failure {
+            background: #f25170;
+        }
+        &.failure_predicted {
+            background: #f9e75a;
+        }
+        &.maintenance {
+            background: #51aef3;
+        }
+        &.no_data {
+            background: #fc8c5a;
+        }
+        &.optimal_performance {
+            background: #51e566;
+        }
+    }
+}
+#legendRow {
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 10px 0px;
+    margin-bottom: 24px;
+    .legendValue {
+        float: left;
+        width: auto;
+        padding: 6px;
+        border-radius: 6px;
+        margin-right: 1em;
+        span {
+            content: "";
+            padding: 0px;
+            margin-right: 12px;
+            border-radius: 8px;
+            padding-left: 16px;
+            &.failure {
+                background: #f25170;
+            }
+            &.failure_predicted {
+                background: #f9e75a;
+            }
+            &.maintenance {
+                background: #51aef3;
+            }
+            &.no_data {
+                background: #fc8c5a;
+            }
+            &.optimal_performance {
+                background: #51e566;
+            }
+        }
+    }
+}
+.analyticsDashboardSeg:last-child {
+    h4 {
+        text-align: center;
+    }
+    #overallEffDiv {
+        height: 300px;
+        display: flex;
+        text-align: center;
+        padding-left: 5%;
+    }
+}
+.background {
+    fill: #2f3539;
+    fill-opacity: 0.01;
+}
+.component {
+    fill: #22272b;
+}
+.component .label {
+    font-family: Myriad, "Helvetic Neue", Helvetica, Arial;
+    text-anchor: middle;
+    fill: #c5d0d8;
+}
+.labels {
+    .label {
+        fill: #c5d0d8;
+        font-weight: 500;
+        font-size: 39px;
+    }
+}
+.arc {
+    stroke-weight: 0.1;
+    fill: #126dfb;
+}
+.label {
+    font-family: Myriad, "Helvetic Neue", Helvetica, Arial;
+    text-anchor: middle;
+}
+.radial-svg {
+    display: block;
+    margin: 0 auto;
+}

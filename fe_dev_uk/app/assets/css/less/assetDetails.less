@@ -1,0 +1,560 @@
+.assetManagementDetail {
+    color: #fff;
+    .backBtn {
+        text-align: left;
+        float: left;
+        text-decoration: none;
+        cursor: pointer;
+        color: #337ab7;
+        &:hover {
+            color: #23527c;
+        }
+    }
+    .relatedProd {
+        text-align: right;
+        float: right;
+        text-decoration: none;
+        cursor: pointer;
+        color: #337ab7;
+        &:hover {
+            color: #23527c;
+        }
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+    .switch input {
+        display: none;
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+    /* Rounded sliders */
+    
+    .slider.round {
+        border-radius: 34px;
+    }
+    .slider.round:before {
+        border-radius: 50%;
+    }
+    .predixGraphFilter {
+        color: #fff;
+        font-size: 16px;
+        padding-top: 6px;
+        text-align: right;
+        width: auto;
+        float: left;
+        padding-right: 13px;
+    }
+    .filterSwitch {
+        float: left
+    }
+    .storedTimeGraphFilter {
+        color: #fff;
+        font-size: 16px;
+        padding-top: 6px;
+        text-align: left;
+        width: auto;
+        float: left;
+        padding-left: 13px;
+    }
+    .assetDetailCard {
+        background: #2f3539;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 40px;
+        padding-top: 40px;
+        padding-left: 55px;
+        padding-right: 75px;
+        .buttonSection {
+            padding-right: 0px;
+            padding-left: 0px;
+            .editInfoBtn {
+                color: #126dfb;
+                background: #22272b;
+                padding: 10px 30px;
+                margin-right: 5px;
+                border-radius: 0px;
+                border: none;
+                margin-top: 20%;
+                margin-bottom: 20px;
+                width: 100%;
+                text-align: center;
+            }
+            .trainBtn {
+                padding: 10px 30px;
+                margin-right: 5px;
+                border-radius: 0px;
+                background: #126dfb;
+                color: #fff;
+                border: none;
+                width: 100%;
+                text-align: center;
+            }
+        }
+        &.mapLocationView {
+            padding: 0px
+        }
+        #outdoorMap {
+            height: 290px;
+            width: 100%;
+        }
+        h4 {
+            color: #fff;
+            font-weight: 400;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .tick line {
+            opacity: 0 !important;
+        }
+        .nvd3 text {
+            font: 400 12px Arial !important;
+            fill: #8397A8
+        }
+        &.assetInfo {
+            .assetImg {
+                height: 150px;
+                margin-top: 20px;
+            }
+            .assetInfoSec {
+                margin-top: 20px;
+                .assetDescTitle {
+                    color: #8397A8;
+                    padding-bottom: 5px;
+                }
+                .assetDescInf {
+                    color: #fff;
+                    padding-bottom: 10px;
+                }
+            }
+            #overallEffDiv {
+                height: 200px;
+                .background {
+                    opacity: 0;
+                }
+            }
+        }
+        &.maintenanceCard {
+            .maintenanceHistory {} .installedSensors {
+                padding-top: 35px;
+                padding-bottom: 20px;
+                border-top: 1px solid #3a4247;
+                div {
+                    float: left;
+                    width: auto;
+                    padding: 12px;
+                    font-weight: 300;
+                    padding-left: 30px;
+                    padding-right: 30px;
+                    background: #22272b;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                    border-radius: 25px;
+                    border-right: 3px solid;
+                    letter-spacing: 0.9px;
+                    &.optimal_performance {
+                        border-right-color: #51e566;
+                    }
+                    &.no_data {
+                        border-right-color: #fc8c5a
+                    }
+                }
+            }
+        }
+        &.analyticsCard {
+            h4 {
+                text-align: center;
+                font-size: 16px;
+                margin-bottom: 55px;
+            }
+            #overallEffDiv {
+                padding-top: 20px;
+                svg {
+                    height: 170px !important;
+                    width: 170px!important;
+                }
+            }
+            #container-speed {
+                margin-top: -35px !important;
+            }
+            .analyticsSectionDetails {
+                .statusSection {
+                    font-size: 20px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    margin-left: 0px;
+                    .statusMarking {
+                        height: 55px;
+                        width: 55px;
+                        background: #fc8c5a;
+                        border-radius: 40px;
+                        /* margin-top: 58px; */
+                        
+                        margin-left: 0;
+                        margin: auto;
+                        margin-top: 75px;
+                        &.PERFORMING_OPTIMALLY {
+                            background: #51e566;
+                        }
+                        &.PREDICTING_FAILURE {
+                            background: #f9e75a;
+                        }
+                        &.FAILURE {
+                            background: #f25170;
+                        }
+                        &.UNDERGOING_MAINTENANCE {
+                            background: #51aef3;
+                        }
+                        &.NO_DATA {
+                            background: #fc8c5a;
+                        }
+                    }
+                    .statusName {
+                        margin-top: 35px;
+                        text-align: center;
+                        content: "";
+                        text-transform: none;
+                        color: #fff;
+                        font-size: 16px;
+                        &.PERFORMING_OPTIMALLY {
+                            content: "Performing Optimally";
+                        }
+                        &.PREDICTING_FAILURE {
+                            content: "Predicting Failure";
+                        }
+                        &.FAILED {
+                            content: "Failure";
+                        }
+                        &.UNDERGOING_MAINTENANCE {
+                            content: "Undergoing Maintenance";
+                        }
+                        &.NO_DATA {
+                            content: "No Data";
+                        }
+                    }
+                    /*.statusMarking{
+                        background: url("../../assets/images/greenMapDot.png")
+
+                    }*/
+                }
+                .cavitationFailureGauge {
+                    padding-left: 60px;
+                    padding-right: 60px;
+                    .failureSectionTitle {
+                        font-size: 20px;
+                        width: 326px;
+                        margin-left: 0px;
+                        text-align: center;
+                        font-weight: 500;
+                        margin-bottom: -14px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+            .runAnaltyics {
+                background: #126dfb;
+                padding: 11px;
+                padding-left: 20px;
+                padding-right: 20px;
+                width: 80%;
+                font-weight: 500;
+                margin-left: 0;
+                margin: auto;
+                text-align: center;
+                margin-top: 20px;
+            }
+            .trainBtn {
+                background: #126dfb;
+                padding: 11px;
+                padding-left: 20px;
+                padding-right: 20px;
+                width: 80%;
+                font-weight: 500;
+                margin-left: 0;
+                margin: auto;
+                text-align: center;
+                margin-top: 20px;
+            }
+            .legendRow {
+                display: flex;
+                justify-content: space-around;
+                padding-left: 40px;
+                margin-top: 30px;
+                .legendValue {
+                    float: left;
+                    width: auto;
+                    padding: 6px;
+                    border-radius: 6px;
+                    margin-right: 3em;
+                    span {
+                        content: "";
+                        padding: 0px;
+                        margin-right: 12px;
+                        border-radius: 8px;
+                        padding-left: 16px;
+                        &.failure {
+                            background: #f25170;
+                        }
+                        &.failure_predicted {
+                            background: #f9e75a;
+                        }
+                        &.maintenance {
+                            background: #51aef3;
+                        }
+                        &.no_data {
+                            background: #fc8c5a;
+                        }
+                        &.optimal_performance {
+                            background: #51e566;
+                        }
+                    }
+                }
+            }
+            #analyticsContent {
+                h4 {
+                    margin-bottom: 75px;
+                }
+            }
+            .selectHour {
+                padding-bottom: 10px;
+                .my-select-label {
+                    border: 1px solid #8598a8;
+                    cursor: pointer;
+                    font-family: helvetica, arial, sans-serif;
+                    height: 40px;
+                    display: block;
+                    width: 80%;
+                    margin: auto;
+                    .my-select-label-text {
+                        padding: 9px 10px;
+                        white-space: nowrap;
+                        overflow-x: hidden;
+                        text-overflow: ellipsis;
+                        top: -20px;
+                        float: left;
+                        width: 75%;
+                    }
+                    .my-select-caret {
+                        font-size: 29px;
+                        /* line-height: 1em; */
+                        
+                        color: #fff;
+                        width: 24%;
+                        text-align: center;
+                        height: 39px;
+                        /* top: -4px; */
+                        
+                        position: relative;
+                        display: inline-block;
+                        margin-left: 0px;
+                        //right: -205px;
+                        border-left: 1px solid #8598a8;
+                        svg {
+                            width: 35%;
+                            position: relative;
+                            top: -7px;
+                        }
+                    }
+                }
+                .my-select-ops {
+                    display: none;
+                    z-index: 5;
+                    position: relative;
+                    background: #fff;
+                    font-family: helvetica, arial, sans-serif;
+                    max-height: 300px;
+                    overflow-y: auto;
+                    //padding: 5px 0;
+                    /* top: 1px; */
+                    
+                    background: #22272b;
+                    width: 71%;
+                    left: 14.5%;
+                    position: absolute;
+                    border: 1px solid #8598a8;
+                    border-top: none;
+                    margin: auto;
+                    &.active {
+                        display: inline-block;
+                    }
+                    &>div {
+                        padding: 10px 14px;
+                        white-space: nowrap;
+                        overflow-x: hidden;
+                        text-overflow: ellipsis;
+                        cursor: pointer;
+                        color: #8497a7;
+                        border-bottom: 1px solid;
+                        &.preselected {
+                            background-color: #16191c;
+                            font-weight: 600;
+                            color: #f3f3f3;
+                        }
+                        &:hover {
+                            background-color: #16191c;
+                            font-weight: 600;
+                            color: #f3f3f3;
+                        }
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                    }
+                }
+                .my-select-backdrop {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: none;
+                    &.active {
+                        display: block;
+                    }
+                }
+                select,
+                .my-select-mobile-input {
+                    opacity: 0;
+                    position: absolute;
+                    z-index: 10;
+                    display: none;
+                    &.active {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+.nvd3 .nv-background {
+    fill: white !important;
+    fill-opacity: 1!important;
+}
+.nv-y .nv-axis g path.domain {
+    stroke: #8397A8 !important;
+}
+.nv-y .tick.zero line {
+    stroke: #8397A8 !important;
+}
+.nvd3 .nv-axis .zero line {
+    stroke: black !important;
+    stroke-opacity: 1 !important;
+}
+.visuallyhidden {
+    display: none;
+}
+.wizard-progress {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    float: left;
+    white-space: nowrap;
+    margin-bottom: 35px;
+    li {
+        float: left;
+        margin-right: 50px;
+        text-align: center;
+        position: relative;
+        width: 117px;
+        .step-name {
+            height: 24px;
+            vertical-align: bottom;
+            text-align: center;
+            width: 114px;
+            display: block;
+        }
+        .step-num {
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 50%;
+            width: 19px;
+            height: 19px;
+            display: inline-block;
+            margin-top: 10px;
+            background: #51e566;
+            &:after {
+                content: "";
+                display: block;
+                background: #23282d;
+                height: 5px;
+                width: 147px;
+                position: relative;
+                bottom: 10px;
+                left: 19px;
+                top: 7px;
+            }
+        }
+        .step-info {
+            color: #667580;
+        }
+    }
+}
+.wizard-progress .step-name-wrapper {
+    display: table-cell;
+    height: 100%;
+    vertical-align: bottom;
+}
+.wizard-progress li:last-of-type .step-num:after {
+    display: none;
+}
+.highcharts-background {
+    fill-opacity: 0;
+}
+.highcharts-tick {
+    stroke-opacity: 0;
+}
+.dischargeAndSuction {
+    .highcharts-series-3 {
+        path:last-child {
+            stroke: #eaa156;
+        }
+    }
+}
+.modal-backdrop.in {
+    z-index: 99;
+    height: 100%!important;
+}
+.modal-dialog {
+    z-index: 100;
+}
+.modal-body {
+    background: #2f3539;
+}

@@ -1,0 +1,9 @@
+---
+applications:
+  - name: deloitte-oilandgas
+    memory: 128M
+    buildpack: nodejs_buildpack
+    command: node app.js
+    path: dist
+env:
+    node_env: cloud

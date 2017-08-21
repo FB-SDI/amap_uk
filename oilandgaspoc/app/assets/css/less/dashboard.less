@@ -1,0 +1,165 @@
+.analyticsMapContainer {
+    color: #fff;
+    h2 {
+        font-size: 26px;
+        padding-left: 0px;
+    }
+    .viewTab {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        li {
+            list-style: none;
+            float: right;
+            width: auto;
+            color: #8598a8;
+            padding: 13px;
+            background: #2d353a;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 12px;
+        }
+        li:hover {
+            background: #126dfb;
+            font-weight: 600;
+            color: #fff;
+        }
+        li.active {
+            background: #126dfb;
+            font-weight: 600;
+            color: #fff;
+        }
+    }
+    .selectPump {
+        padding-bottom: 50px;
+        .my-select-label {
+            border: 1px solid #8598a8;
+            cursor: pointer;
+            font-family: helvetica, arial, sans-serif;
+            height: 40px;
+            display: block;
+            width: 300px;
+            .my-select-label-text {
+                padding: 9px 10px;
+                white-space: nowrap;
+                overflow-x: hidden;
+                text-overflow: ellipsis;
+                top: -20px;
+                float: left;
+                width: 253px;
+            }
+            .my-select-caret {
+                font-size: 29px;
+                /* line-height: 1em; */
+                color: #fff;
+                width: 45px;
+                text-align: center;
+                height: 39px;
+                /* top: -4px; */
+                position: relative;
+                display: inline-block;
+                margin-left: 0px;
+                //right: -205px;
+                border-left: 1px solid #8598a8;
+                svg {
+                    width: 35%;
+                    position: relative;
+                    top: -7px;
+                }
+            }
+        }
+        .my-select-ops {
+            display: none;
+            z-index: 5;
+            position: relative;
+            background: #fff;
+            font-family: helvetica, arial, sans-serif;
+            max-height: 300px;
+            overflow-y: auto;
+            //padding: 5px 0;
+            /* top: 1px; */
+            background: #22272b;
+            width: 255px;
+            border: 1px solid #8598a8;
+            border-top: none;
+            position: absolute;
+            &.active {
+                display: inline-block;
+            }
+            &>div {
+                padding: 10px 14px;
+                white-space: nowrap;
+                overflow-x: hidden;
+                text-overflow: ellipsis;
+                cursor: pointer;
+                color: #8497a7;
+                border-bottom: 1px solid;
+                &.preselected {
+                    background-color: #16191c;
+                    font-weight: 600;
+                    color: #f3f3f3;
+                }
+                &:hover {
+                    background-color: #16191c;
+                    font-weight: 600;
+                    color: #f3f3f3;
+                }
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+        .my-select-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+        select,
+        .my-select-mobile-input {
+            opacity: 0;
+            position: absolute;
+            z-index: 10;
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+    }
+    .titleSec {
+        color: #8397a8;
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+    .infSec {
+        color: #fff;
+        padding-bottom: 10px;
+    }
+}
+
+.notificationPanel {
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+    text-align: right;
+    img {
+        height: 35px;
+        margin-top: 35px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .notificationPanel {
+        text-align: right;
+        margin-top: -8em;
+        right: 1.5em;
+        img {
+            height: 35px;
+            margin-top: 35px;
+        }
+    }
+}

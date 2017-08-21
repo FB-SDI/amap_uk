@@ -1,0 +1,26 @@
+<div class="dashboard_container row">
+
+    <ng-include src=" '../../assets/templates/common/sidebar.html' "></ng-include>
+
+    <div class="col-xs-11 row mainPage ">
+        <ng-include src=" '../../assets/templates/common/header.html' "></ng-include>
+        <div ng-if="analyticsDashboard ">
+            <!--<div ng-if="false ">-->
+            <ng-include src=" '../../assets/templates/analyticsMapDashboard/analyticsMapDashboard.html' "></ng-include>
+        </div>
+        <div ng-if="notificationDashboard ">
+            <!--<div ng-if="false ">-->
+            <ng-include src=" '../../assets/templates/notificationDashboard/notificationDashboard.html' "></ng-include>
+        </div>
+
+        <div ng-if="assetDetailDashboard ">
+            <ng-include src=" '../../assets/templates/assetManagment/assetDetail.html' "></ng-include>
+        </div>
+        <div ng-if="assetManagment ">
+            <!--<div ng-if="false ">-->
+            <!--the commited parts are not commited to bitbucket-->
+            <ng-include src=" '../../assets/templates/assetManagment/assetsList.html' "></ng-include>
+        </div>
+    </div>
+
+</div>

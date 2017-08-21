@@ -1,0 +1,30 @@
+{
+    "data": {
+        "performanceMetrics": [{
+                "label": "Performance Optimally",
+                "units": 234,
+                "percentage": 74
+            },
+            {
+                "label": "Failure Predicted",
+                "units": 6342,
+                "percentage": 74
+            },
+            {
+                "label": "Failure",
+                "units": 756,
+                "percentage": 74
+            },
+            {
+                "label": "Undergoing Maintanence",
+                "units": 123,
+                "percentage": 74
+            },
+            {
+                "label": "No Data",
+                "units": 45,
+                "percentage": 74
+            }
+        ]
+    }
+}

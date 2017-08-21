@@ -1,0 +1,175 @@
+<div class="assetManagementDetail col-xs-12 row" ng-controller="assetDetailController">
+    <a class="backBtn" ng-click="goBack()">Back</a>
+    <div class="assetInfo assetDetailCard col-xs-12">
+        <div class="col-xs-12">
+            <h4>{{assetInfo.serialNumber}}</h4>
+            <div class="assetImg col-xs-3"><img src="../assets/images/{{assetInfo.image_url}}" style="width:auto; height:150px;"></div>
+            <div class="assetInfoSec col-xs-9">
+                <div class="col-xs-3">
+                    <div class="col-xs-12 assetDescTitle">
+                        Manufacturer
+                    </div>
+                    <div class="col-xs-12 assetDescInf">
+                        {{assetInfo.manufacturer}}
+                    </div>
+                    <div class="col-xs-12 assetDescTitle">
+                        Model
+                    </div>
+                    <div class="col-xs-12 assetDescInf">
+                        {{assetInfo.modelName}}
+                    </div>
+                    <div class="col-xs-12 assetDescTitle">
+                        Pump Type
+                    </div>
+                    <div class="col-xs-12 assetDescInf">
+                        {{assetInfo.pumpType}} Pump
+                    </div>
+
+                </div>
+                <div class="col-xs-3">
+
+                    <div class="col-xs-12 assetDescTitle">
+                        Capacity
+                    </div>
+                    <div class="col-xs-12 assetDescInf">
+                        {{assetInfo.capacity}} m3/h
+                    </div>
+                    <div class="col-xs-12 assetDescTitle">
+                        Max Pressure
+                    </div>
+                    <div class="col-xs-12 assetDescInf">
+                        {{assetInfo.suctionPressureRequired}} psi
+                    </div>
+                    <div class="col-xs-12 assetDescTitle">
+                        Max Temperature
+                    </div>
+                    <div class="col-xs-12 assetDescInf">
+                        {{assetInfo.temperature}} &#8451;
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="col-xs-12 assetDescTitle">
+                        Machine Horse Power
+                    </div>
+                    <div class="col-xs-12 assetDescInf">
+                        {{assetInfo.machineHorsePower}} HP
+                    </div>
+                    <div class="col-xs-12 assetDescTitle">
+                        Manufactured Date
+                    </div>
+                    <div class="col-xs-12 assetDescInf">
+                        {{assetInfo.manufacturedDate}}
+                    </div>
+                    <div class="col-xs-12 assetDescTitle">
+                        Last Maintenance Date
+                    </div>
+                    <div class="col-xs-12 assetDescInf">
+                        {{assetInfo.lastMaintenanceDate}}
+                    </div>
+                </div>
+                <div class="col-xs-2 buttonSection">
+                    <div class="editInfoBtn" ng-click="editAssetDetail()">Edit Info</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="predixGraphFilter col-xs-2">
+        Predix Machine
+    </div>
+    <div class="filterSwitch">
+        <label class="switch">
+        <input type="checkbox" ng-model="graphselect">
+        <div class="slider round"></div>
+        </label>
+    </div>
+    <div class="storedTimeGraphFilter col-xs-2">
+        Stored Time Series Data
+    </div>
+    <div class="analyticsCard assetDetailCard col-xs-12 ">
+        <div id="analyticsContent">
+            <div class="selectHour col-xs-3">
+                <h4>&nbsp;</h4>
+                <div select-pump="hourData" selection="selectHour" class="selectHour"></div>
+                <br />
+                <div class="runAnaltyics" ng-click="runAnalytics()">Run Analytics</div>
+                  <div class="trainBtn" ng-click="executeTraining()">Perform Machine Learning</div>
+            </div>
+
+            <div class="col-xs-2 analyticsSectionDetails">
+                <div class="statusSection">
+
+                    <h4>Machine Status</h4>
+
+                    <div class="statusMarking" ng-class="assetInfo.analyticAttributes.machineStatus"></div>
+                    <div class="statusName" ng-class="assetInfo.analyticAttributes.machineStatus">{{analyticsMachineStatusData}}</div>
+                </div>
+
+            </div>
+            <div class="col-xs-4 cavitationFailureGauge">
+
+                <h4>Pressure Differential</h4>
+
+                <div id="container-speed" style="width: 300px; height: 200px; margin: auto"></div>
+            </div>
+            <div class="col-xs-3">
+                <h4>Energy Efficiency</h4>
+                <div id="overallEffDiv"></div>
+            </div>
+
+            <div class="col-xs-12 legendRow">
+                <fieldset>
+                    <legend style="color:#fff">Legend</legend>
+                <div class="legendValue"><span class="optimal_performance"></span>Performing Optimally</div>
+                <div class="legendValue"><span class="failure_predicted"></span>Failure Predicted</div>
+                <div class="legendValue"><span class="failure"></span>Failure</div>
+                <div class="legendValue"><span class="maintenance"></span>Undergoing Maintenance</div>
+                <div class="legendValue"><span class="no_data"></span>No Data</div>
+              </fieldset>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="assetDischargePres assetDetailCard col-xs-12 ">
+        <h4>ASSET PRESSURE GRAPH</h4>
+        <div id="dischargeAndSuction" style="height: 400px; min-width: 310px"></div>
+    </div>
+    <div class="assetEnergyConsp assetDetailCard col-xs-12 ">
+        <h4>ASSET ENERGY CONSUMPTION</h4>
+        <div id="energyConsumption" style="height: 400px; min-width: 310px"></div>
+    </div>
+    <div class="assetEnergyConsp assetDetailCard col-xs-12 ">
+        <h4>ASSET VIBRATION</h4>
+        <div id="vibration" style="height: 400px; min-width: 310px"></div>
+    </div>
+    <div class="assetEnergyConsp assetDetailCard col-xs-12 ">
+        <h4>ASSET DAYS TO FAILURE</h4>
+        <div id="daysToFailure" style="height: 400px; min-width: 310px"></div>
+    </div>
+    <!-- <div class="assetVibration assetDetailCard col-xs-12 ">
+        <h4>ASSET VIBRATION</h4>
+        <div id="vibration" style="height: 400px; min-width: 310px"></div>
+    </div> -->
+    <div class="mapLocationView assetDetailCard col-xs-12 ">
+        <div id="outdoorMap"></div>
+    </div>
+    <div class="maintenanceCard assetDetailCard col-xs-12 ">
+        <div class="maintenanceHistory col-xs-12">
+            <h4>MAINTENANCE HISTORY</h4>
+            <ol class="wizard-progress clearfix">
+                <li ng-repeat="stepProgress in stepProgressData">
+                    <span class="visuallyhidden">Step </span><span class="step-num"></span>
+                    <span class="step-name">{{stepProgress.date}}</span>
+                    <span class="step-info">{{stepProgress.info}}</span>
+                </li>
+            </ol>
+
+
+        </div>
+        <div class="installedSensors col-xs-12">
+            <h4>Top 4 Sensors</h4>
+            <div ng-repeat="sensor in sensorData" ng-class="sensor.sensorStatus">{{sensor.sensorType}}</div>
+        </div>
+    </div>
+</div>

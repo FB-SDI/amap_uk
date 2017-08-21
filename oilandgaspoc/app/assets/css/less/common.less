@@ -1,0 +1,63 @@
+html {
+    height: 100%;
+    min-width: 768px;
+    background: #22272b;
+    body {
+        top: 0px !important;
+        height: 100%;
+        background: #22272b;
+        max-width: 1600px;
+        overflow-x: hidden;
+        footer,
+        header {
+            height: auto;
+            clear: both;
+        }
+        .page_container {
+            display: block;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            .mainPage {
+                padding: 0 5em 0 2em;
+                left: 8.5em;
+                position: absolute;
+            }
+            .main_container {
+                display: block;
+                width: 98%;
+                height: 90%;
+                padding: 0;
+                margin: 0px 1% 0 1%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    html{
+        body {
+            overflow-x: scroll;
+        }
+    }
+}
+.PERFORMING_OPTIMALLY{
+    color: #51e566;
+    content: "Performing Optimally";
+}
+.PREDICTING_FAILURE{
+    color: #f9e75a;
+    content: "Predicting Failure";
+}
+.FAILED{
+    color: #f25170;
+    content: "Failure";
+}
+.UNDERGOING_MAINTENANCE{
+    color: #51aef3;
+    content: "Undergoing Maintenance";
+}
+.NO_DATA{
+    color: #fc8c5a;
+    content: "No Data";
+}

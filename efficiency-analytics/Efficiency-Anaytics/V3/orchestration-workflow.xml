@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             expressionLanguage="http://www.w3.org/1999/XPath" id="sid-81430087-7a44-4be3-8517-914faf923256"
+             targetNamespace="DSP-PM" typeLanguage="http://www.w3.org/2001/XMLSchema"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd"
+             xmlns:activiti="http://activiti.org/bpmn">
+
+    <process id="EfficiencyCalculatorOrchestration" isExecutable="true">
+
+        <startEvent id="startEvent"
+                    name="">
+            <outgoing>start-to-EfficiencyCalculatorOrchestration</outgoing>
+        </startEvent>
+
+        <serviceTask completionQuantity="1"
+                     id="EfficiencyCalculatorOrchestration"
+                     isForCompensation="false"
+                     name="04e68b16-c5a3-4bc1-840c-699b7da65056::cal-eff::v3"
+                     startQuantity="1"
+                     activiti:delegateExpression="${javaDelegate}"
+                     xmlns:activiti="http://activiti.org/bpmn">
+            <incoming>start-to-EfficiencyCalculatorOrchestration</incoming>
+            <outgoing>EfficiencyCalculatorOrchestration-to-end</outgoing>
+        </serviceTask>
+
+        <endEvent id="endEvent" name="">
+            <incoming>EfficiencyCalculatorOrchestration-to-end</incoming>
+        </endEvent>
+
+
+        <sequenceFlow id="start-to-EfficiencyCalculatorOrchestration"
+                      name="" sourceRef="startEvent"
+                      targetRef="EfficiencyCalculatorOrchestration"/>
+
+        <sequenceFlow id="EfficiencyCalculatorOrchestration-to-end"
+                      name="" sourceRef="EfficiencyCalculatorOrchestration" targetRef="endEvent"/>
+
+    </process>
+
+</definitions>
